@@ -14,3 +14,19 @@ function SumOfASquare(naturalNumbers){
 
 // overwrite the object prototype, or add methods to the prototype
 // to satisfy the two method calls, sumOfSquares() and squareOfTheSums()
+
+SumOfASquare.prototype.sumOfSquares = function () {
+  const naturals = [];
+  const summedSquares = 0;
+
+  for (let i = 1; i <= this.naturalNumbers; i++) {
+    naturals.push(i);
+  }
+
+  summedSquares = naturals.reduce(function(sum, number) {
+    sum += Math.pow(number, 2);
+    return sum;
+  }, 0);
+
+  return summedSquares;
+}
